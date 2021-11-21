@@ -1,12 +1,11 @@
 import React from "react";
 import Api from "../../api/api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (evento) => {
-    
     evento.preventDefault();
 
     console.log(evento.target);
@@ -41,7 +40,9 @@ const Cadastro = () => {
     <div className="container">
       <form onSubmit={handleSubmit}>
         <div className="row mt-4 justify-content-center">
-        <h3 className="d-flex justify-content-center">Cadastro das Tarefas</h3>
+          <h3 className="d-flex justify-content-center">
+            Cadastro das Tarefas
+          </h3>
           <div className="col-8 ">
             <div className="form-floating mb-2">
               <input
@@ -69,9 +70,9 @@ const Cadastro = () => {
           <div className="col-8 ">
             <div className="form-floating mb-2">
               <select name="status" id="status" className="form-control">
-                <option value="Incompleto">Incompleto</option>
-                <option value="em-progresso">Em Progresso</option>
-                <option value="Completo">Completo</option>
+                <option value="Fazer">Fazer</option>
+                <option value="Fazendo">Fazendo</option>
+                <option value="Feito">Feito</option>
               </select>
               <label htmlFor="status">Status</label>
             </div>
@@ -111,6 +112,9 @@ const Cadastro = () => {
               <button className="btn btn-success " type="submit">
                 Cadastrar
               </button>
+              <Link to="/">
+                <button className="btn btn-danger">Voltar</button>
+              </Link>
             </div>
           </div>
         </div>

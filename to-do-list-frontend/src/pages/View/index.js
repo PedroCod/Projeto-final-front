@@ -62,7 +62,7 @@ const View = () => {
         </p>
         <h5 className="card-text">{tarefa.descricao}</h5>
         <div className="btn-group mt-3 ">
-          <Link to={`/edit/${tarefa._id}`} className="btn btn-info">
+          <Link to={`/edit/${tarefa._id}`} className="btn cssbutton ">
             Editar
           </Link>
           <button className="btn btn-danger" onClick={AbreModal}>
@@ -70,7 +70,7 @@ const View = () => {
           </button>
         </div>
       </div>
-      <Modal open={open} onClose={FechaModal} center showCloseIcon={false}>
+      <Modal open={open} onClose={FechaModal} center showCloseIcon={false} classNames="modalcss">
         <h2 className="my-4">Realmente deseja excluir essa tarefa?</h2>
         <div className="d-flex w-50 mx-auto justify-content-around">
           <button className="btn btn-danger mr-2" onClick={FechaModal}>
