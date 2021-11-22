@@ -29,7 +29,7 @@ const Cadastro = () => {
     }
     const result = await request.json();
     if (result.error) {
-      console.log(result.error);
+      alert(result.error);
     } else {
       alert(result.message);
       navigate("/");
